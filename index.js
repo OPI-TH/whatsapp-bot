@@ -1,11 +1,29 @@
 const wa = require('@open-wa/wa-automate');
 const fs = require('fs');
+const express = require("express")
+const bodyParser = require("body-parser")
 
-wa.create({qrTimeout: 0}).then(client => start(client));
+wa.create({
+  sessionId: "BOT_WA_OPITH",
+  multiDevice: true, //required to enable multiDevice support
+  blockCrashLogs: true,
+  disableSpins: true,
+  hostNotificationLang: 'PT_BR',
+  logConsole: false,
+  popup: true,
+  qrTimeout: 0, //0 means it will wait forever for you to scan the qr code
+}).then(client => start(client));
 
 const prefix = 'v!'
 
 function start(client) {
+    // Initialize express and define a port
+    const app = express()
+    const PORT = 3000
+    // Tell express to use body-parser's JSON parsing
+    app.use(bodyParser.json())
+    // Start express on the defined port
+    app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
   let commands = new Map()
   const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -30,3 +48,5 @@ console.log(commands)
         }
     })
   }
+
+  // Initialize express and define a port
