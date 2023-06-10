@@ -1,9 +1,11 @@
 node_modules
 .history
 session.data.json
-
+.wwebjs_auth
+.wwebjs_cache
 # managed by open-wa
 **.data.json
 **.node-persist**
 **_IGNORE_**
 # end managed by open-wa
+
