@@ -13,5 +13,4 @@ FROM node:18
 WORKDIR /app
 COPY . /app
 RUN NODE_OPTIONS=--max_old_space_size=128 npm install
-RUN npm install
 CMD ["npm", "start"]
