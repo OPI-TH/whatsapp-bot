@@ -13,4 +13,4 @@ FROM node:18
 WORKDIR /app
 COPY . /app
 RUN npm install
-CMD ["node", "--max-old-space-size=255", "index.js"]
+CMD ["node", "--max-old-space-size=128", "index.js"]
