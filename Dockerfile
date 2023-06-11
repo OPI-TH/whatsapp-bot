@@ -11,10 +11,6 @@ RUN apt-get update && apt-get install curl gnupg -y \
 
 FROM node:18
 RUN npm install
-WORKDIR /usr/app
-
-# Install some dependencies
-COPY ./package.json ./
-RUN npm install
-COPY ./ ./ 
+WORKDIR /app
+COPY . /app
 CMD ["node", "index.js"]
