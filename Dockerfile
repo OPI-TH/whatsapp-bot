@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install curl gnupg -y \
   && rm -rf /var/lib/apt/lists/*
 
 FROM node:18
+ENV NODE_OPTIONS="--max-old-space-size=128"
 WORKDIR /app
 COPY . /app
 RUN npm install
-ENV NODE_OPTIONS="--max-old-space-size=128"
 CMD ["npm", "start"]
