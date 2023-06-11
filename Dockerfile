@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install curl gnupg -y \
   && rm -rf /var/lib/apt/lists/*
 
 FROM node:18
-RUN npm install
 WORKDIR /app
 COPY . /app
+RUN npm install
 CMD ["node", "index.js"]
