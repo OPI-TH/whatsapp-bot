@@ -13,4 +13,5 @@ FROM node:18
 WORKDIR /app
 COPY . /app
 RUN npm install
-CMD ["node", "--max-old-space-size=128", "index.js"]
+ENV NODE_OPTIONS="--max-old-space-size=128"
+CMD ["npm", "start"]
