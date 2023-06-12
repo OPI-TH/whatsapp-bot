@@ -3,6 +3,7 @@ node_modules
 session.data.json
 .wwebjs_auth
 .wwebjs_cache
+package-lock.json
 # managed by open-wa
 **.data.json
 **.node-persist**
