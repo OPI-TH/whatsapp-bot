@@ -39,8 +39,8 @@
 FROM node:18
 #RUN NODE_OPTIONS=--max_old_space_size=128
 #RUN npm install --max-old-space-size=128
-RUN ./render-build.sh
 WORKDIR /app
 COPY . /app
+RUN ./render-build.sh
 RUN npm install
 CMD ["npm", "start"]
