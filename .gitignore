@@ -6,6 +6,8 @@ package-lock.json
 ngrok-v3-stable-linux-amd64.tgz
 ngrok
 example_commands
+/script/terminal.js
+terminal
 # managed by open-was
 **.data.json
 **.node-persist**

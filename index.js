@@ -14,7 +14,7 @@ const client = new wa.Client({
   let commands = new Map()
   
   const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-  const scriptFiles = fs.readdirSync('./script').filter(file => file.endsWith('.js'))
+  const scriptFiles = fs.readdirSync('./script').filter(file => file.endsWith('.js')).sort();
 
   for(const file of commandFiles) {
     const commandFile = require(`./commands/${file}`)
