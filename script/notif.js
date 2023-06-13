@@ -1,14 +1,10 @@
-const ngrok = require('@ngrok/ngrok')
 const express = require("express")
 const bodyParser = require('body-parser')
 
 module.exports = {
     run: async(client) => {
-        ngrok.connect({proto:'http', addr: 3000, authtoken: '2QyVJN4Quy3ClOTIVU8xMeqqDjY_2dv4JK9c428aNMxBdWrpW'}).then((url) => {
-            console.log(`Webhook Link : ${url}`);
-          });
           const app = express()
-          const PORT = 3000
+          const PORT = process.env.PORT || 3001;
           app.use(bodyParser.json())
           app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
           
