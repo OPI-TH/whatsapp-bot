@@ -3,6 +3,8 @@ node_modules
 session.data.json
 .wwebjs_cache
 package-lock.json
+ngrok-v3-stable-linux-amd64.tgz
+ngrok
 # managed by open-wa
 **.data.json
 **.node-persist**

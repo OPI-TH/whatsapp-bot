@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 module.exports = {
     run: async(client) => {
           const app = express()
-          const PORT = process.env.PORT || 3001;
+          const PORT = 3000
           app.use(bodyParser.json())
           app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
           
@@ -20,9 +20,11 @@ module.exports = {
             Kecamatan : ${req.body.Kecamatan}
             Desa : ${req.body.Desa}
             Alamat : ${req.body.Alamat}
+            Foto KTP : https://drive.google.com/open?id=${req.body["Foto KTP Pimpinan/Pendamping"][0]}
             Ini Adalah Pesan Otomatis. Terimakasih`
         
             console.log(pesan)// Call your action on the request here 
+            console.log(req.body)
             
             client.sendMessage('6282142968885@c.us',pesan);
             client.sendMessage('6285234438685@c.us',pesan);
