@@ -5,7 +5,8 @@ session.data.json
 package-lock.json
 ngrok-v3-stable-linux-amd64.tgz
 ngrok
-# managed by open-wa
+example_commands
+# managed by open-was
 **.data.json
 **.node-persist**
 **_IGNORE_**

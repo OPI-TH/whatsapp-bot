@@ -1,0 +1,11 @@
+{
+    "columnDefault": {
+        "width": 10,
+        "wrapWord": true
+    },
+    "header" : {
+      "alignment": "center",
+      "content": "COMMAND LIST\nIni adalah daftar command yang tersedia",
+      "wrapWord": true
+    }
+}

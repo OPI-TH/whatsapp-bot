@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 module.exports = {
     run: async(client) => {
           const app = express()
-          const PORT = 3000
+          const PORT = process.env.PORT || 3001
           app.use(bodyParser.json())
           app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
           
@@ -26,8 +26,9 @@ module.exports = {
             console.log(pesan)// Call your action on the request here 
             console.log(req.body)
             
-            client.sendMessage('6282142968885@c.us',pesan);
-            client.sendMessage('6285234438685@c.us',pesan);
+            ["6282142968885@c.us", "6285234438685@c.us"].forEach(nomer => {
+              client.sendMessage(nomer, pesan)
+            });
             res.status(200).end()
           })
     }
